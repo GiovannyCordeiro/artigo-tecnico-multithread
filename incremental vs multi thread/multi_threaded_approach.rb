@@ -16,6 +16,8 @@ pictures = %w[
   https://pbs.twimg.com/media/EzJeKVeVUAo6ieG?format=jpg&name=medium
 ]
 
+start_time = Time.now
+
 parts_list = pictures.each_slice(3).to_a
 
 threads = parts_list.each_with_index.map do |part_list, group_index|
@@ -38,3 +40,7 @@ threads = parts_list.each_with_index.map do |part_list, group_index|
 end
 
 threads.each(&:join)
+
+end_time = Time.now
+
+puts "Tempo do algoritmo com multithreading: #{end_time - start_time}"

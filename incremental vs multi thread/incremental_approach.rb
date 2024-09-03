@@ -33,3 +33,5 @@ woodpicker_pictures.each_with_index do |uri, idx|
 end
 
 end_time = Time.now
+
+puts "Tempo do algoritmo tradicional: #{end_time - start_time}"
